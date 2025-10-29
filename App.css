@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f6fa;
+}
+
+.app-container {
+  text-align: center;
+  padding: 30px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Product grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  width: 220px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.price {
+  color: #007bff;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.desc {
+  color: #555;
+  margin: 10px 0 20px 0;
+  font-size: 15px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Inputs */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+.upload-section {
+  margin-top: 10px;
+}
