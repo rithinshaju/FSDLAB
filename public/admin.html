@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="main-title">Admin Panel</h1>
+
+  <form id="productForm" enctype="multipart/form-data" class="form-box">
+    <input type="text" id="name" name="name" placeholder="Product Name" required>
+    <input type="number" id="price" name="price" placeholder="Price" required>
+
+    <div class="radio-group">
+      <label><input type="radio" name="category" value="Clothing" checked> Clothing</label>
+      <label><input type="radio" name="category" value="Electronics"> Electronics</label>
+      <label><input type="radio" name="category" value="Home"> Home</label>
+    </div>
+
+    <input type="file" id="image" name="image" accept="image/*">
+    <button type="submit" class="btn">Add Product</button>
+  </form>
+
+  <div id="adminList" class="admin-grid"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
