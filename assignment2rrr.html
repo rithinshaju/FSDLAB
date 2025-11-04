@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOM Manipulation Example</title>
+  <style>
+    #container {
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 320px;
+      font-family: Arial, sans-serif;
+    }
+    #header {
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #333;
+    }
+    #colorBox {
+      width: 150px;
+      height: 150px;
+      background-color: rgb(67, 157, 94);
+      position: relative;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #000;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      user-select: none;
+    }
+    .textClass {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #444;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2 id="header">Original Heading</h2>
+    
+    <div id="colorBox">Color Box</div>
+    
+    <p class="textClass">Paragraph 1</p>
+    <p class="textClass">Paragraph 2</p>
+    <p class="textClass">Paragraph 3</p>
+    
+    <button id="changeTextBtn">Change Header Text</button>
+    <button id="changeColorBtn">Change Box Color</button>
+    <button id="addTextBtn">Add New Text</button>
+    <button id="deleteNodeBtn">Delete Last Paragraph</button>
+  </div>
+
+  <script>
+    
+    const header = document.getElementById('header');
+    const colorBox = document.getElementById('colorBox');
+
+    
+    const changeTextBtn = document.getElementById('changeTextBtn');
+    const changeColorBtn = document.getElementById('changeColorBtn');
+    const addTextBtn = document.getElementById('addTextBtn');
+    const deleteNodeBtn = document.getElementById('deleteNodeBtn');
+
+    changeTextBtn.addEventListener('click', () => {
+      header.innerHTML = 'Updated Heading Text!';
+    });
+
+    changeColorBtn.addEventListener('click', () => {
+      if (colorBox.style.backgroundColor === 'coral') {
+        colorBox.style.backgroundColor = 'lightblue';
+        colorBox.style.color = '#000';
+        colorBox.style.fontWeight = 'bold';
+      } else {
+        colorBox.style.backgroundColor = 'coral';
+        colorBox.style.color = '#fff';
+        colorBox.style.fontWeight = 'bold';
+      }
+    });
+
+    addTextBtn.addEventListener('click', () => {
+      const newText = document.createTextNode('This is a newly added text node.');
+      const newParagraph = document.createElement('p');
+      newParagraph.appendChild(newText);
+      newParagraph.className = 'textClass';
+      newParagraph.style.color = 'green';
+      newParagraph.style.fontWeight = 'bold';
+      document.getElementById('container').appendChild(newParagraph);
+    });
+
+    deleteNodeBtn.addEventListener('click', () => {
+      const paras = document.getElementById('container').getElementsByTagName('p');
+      if (paras.length > 0) {
+        const lastPara = paras[paras.length - 1];
+        lastPara.parentNode.removeChild(lastPara);
+      } else {
+        alert('No more paragraphs to delete!');
+      }
+    });
+  </script>
+</body>
+</html>

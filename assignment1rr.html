@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            position: absolute;
+            left: 20px; 
+            top: 20px;  
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #fffdfd;
+            font-size: 14px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column; 
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3f3f3f;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Event Registration</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" id="name" placeholder="Enter name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input type="email" id="email" placeholder="Enter email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone : </label>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Workshop</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="workshop" value="Web Development" required>
+                        Web Development
+                    </label>
+                    <label>
+                        <input type="radio" name="workshop" value="Data Science">
+                        Data Science
+                    </label>
+                    <label>
+                        <input type="radio" name="workshop" value="Machine Learning">
+                        Machine Learning
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
